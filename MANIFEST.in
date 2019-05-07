@@ -1,0 +1,6 @@
+include HISTORY.rst
+include LICENSE
+include README.rst
+include requirements.txt
+recursive-include org_permissions *.htm *.html *.js *.css *.py *.po *.mo *.gif *.eot *.svg *.ttf *.woff *.woff2
+
