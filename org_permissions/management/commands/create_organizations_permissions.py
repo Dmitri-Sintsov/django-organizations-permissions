@@ -38,7 +38,7 @@ class Command(BaseCommand):
 
     def setup_app(self, app_name):
         permissions = import_string('{}.permissions'.format(app_name))
-        self.setup_organizations(permissions=permissions.DEFAULT_ORGANIZATION_PERMISSIONS)
+        self.setup_organizations(permissions=permissions.ORGANIZATION_PERMISSIONS)
 
     def handle(self, *args, **options):
         for app_name in options['app_names'].split(','):

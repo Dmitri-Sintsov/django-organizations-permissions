@@ -2,7 +2,7 @@ from rest_framework.permissions import DjangoModelPermissions
 
 
 # Key is an Organization name, value is the list of Permission.
-DEFAULT_ORGANIZATION_PERMISSIONS = {
+ORGANIZATION_PERMISSIONS = {
     'Organization Admins': [
         'organizations.view_organizationuser',
         'organizations.add_organizationuser',

@@ -1,5 +1,5 @@
 .. _auth backend: https://github.com/Dmitri-Sintsov/django-organizations-permissions/blob/master/org_permissions/auth_backends.py
-.. _DEFAULT_ORGANIZATION_PERMISSIONS: https://github.com/Dmitri-Sintsov/django-organizations-permissions/search?q=DEFAULT_ORGANIZATION_PERMISSIONS&unscoped_q=DEFAULT_ORGANIZATION_PERMISSIONS
+.. _ORGANIZATION_PERMISSIONS: https://github.com/Dmitri-Sintsov/django-organizations-permissions/blob/master/org_permissions/permissions.py
 .. _django-organizations: https://github.com/bennylope/django-organizations
 .. _DRF Permissions: https://github.com/Dmitri-Sintsov/django-organizations-permissions/blob/master/org_permissions/permissions.py
 .. _sample project: https://github.com/Dmitri-Sintsov/django-organizations-sample
@@ -23,7 +23,7 @@ Then run::
     python3 manage.py makemigrations org_permissions
     python3 manage.py migrate
 
-Use provided sample `DEFAULT_ORGANIZATION_PERMISSIONS`_ or create your own `permissions.py` then run::
+Use provided sample `ORGANIZATION_PERMISSIONS`_ or create your own `permissions.py` then run::
 
     python3 manage.py create_organizations_permissions --app-names=org_permissions
 
