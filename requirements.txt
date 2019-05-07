@@ -1,0 +1,5 @@
+django-organizations
+# required by django-organizations:
+django-extensions
+# required by custom DRF Permission class:
+djangorestframework
