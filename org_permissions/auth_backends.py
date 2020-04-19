@@ -24,6 +24,9 @@ class OrganizationModelBackend(ModelBackend):
         setattr(user_obj, self.perm_cache_name, set(perms))
         return perms
 
+    def has_module_perms(self, app_label, obj=None):
+        return True
+
     def has_perm(self, user_obj, perm, obj=None):
         if perm in self.get_organization_permissions(user_obj, obj):
             return True
