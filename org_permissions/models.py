@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import Permission
+from django.contrib.auth.models import Permission, Group
 from organizations.models import Organization
 
 class OrganizationPermissionManager(models.Manager):
