@@ -16,7 +16,7 @@ class OrganizationModelBackend(ModelBackend):
             return getattr(user_obj, self.perm_cache_name)
         user_organizations = user_obj.organizations_organization.all()
         user_organizations_permissions = OrganizationPermission.objects.filter(
-            organization__in=Subquery(user_organizations.values('pk'))
+            organizations__in=Subquery(user_organizations.values('pk'))
         )
         perms = user_organizations_permissions.annotate(
             perm=Concat('permissions__content_type__app_label', Value('.'), 'permissions__codename')
