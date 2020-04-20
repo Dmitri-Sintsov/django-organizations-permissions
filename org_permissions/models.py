@@ -1,8 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import Permission
-
 from organizations.models import Organization
-
 
 class OrganizationPermissionManager(models.Manager):
 
@@ -17,10 +15,12 @@ class OrganizationPermissionManager(models.Manager):
         org.users.remove(user)
         return org, created
 
-
 class OrganizationPermission(models.Model):
-    organization = models.OneToOneField(
-        Organization, on_delete=models.CASCADE, related_name='org_perm', null=False, primary_key=True, verbose_name='Organization'
+    name = models.CharField(max_length=100)
+    organizations = models.ManyToManyField(
+        Organization, 
+        related_name='org_perm', 
+        verbose_name='Organizations'
     )
     # Many Permission to many OrganizationPermission.
     permissions = models.ManyToManyField(
@@ -34,4 +34,12 @@ class OrganizationPermission(models.Model):
         verbose_name_plural = 'Organization permissions'
 
     def __str__(self):
-        return '{} : {}'.format(str(self.organization), ' : '.join(str(perm) for perm in self.permissions.all()))
+        return '{}'.format(str(self.name))
+
+class OrganizationStaffGroup(Group):
+    organization = models.OneToOneField(
+        Organization, on_delete=models.CASCADE, related_name='org_staff_groups', null=False, primary_key=True
+    )
+
+    def __str__(self):
+        return '{} : {}'.format(str(self.organization), self.name)
