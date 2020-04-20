@@ -38,7 +38,11 @@ class OrganizationPermission(models.Model):
 
 class OrganizationStaffGroup(Group):
     organization = models.OneToOneField(
-        Organization, on_delete=models.CASCADE, related_name='org_staff_groups', null=False, primary_key=True
+        Organization, 
+        on_delete=models.CASCADE, 
+        related_name='org_staff_groups', 
+        null=False, 
+        primary_key=True
     )
 
     def __str__(self):
