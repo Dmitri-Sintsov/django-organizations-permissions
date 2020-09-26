@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import OrganizationPermission
+from .models import OrganizationPermission, OrganizationStaffGroup
 
-
-admin.site.register(OrganizationPermission, admin.ModelAdmin)
+admin.site.register(OrganizationPermission)
+admin.site.register(OrganizationStaffGroup)

@@ -3,6 +3,5 @@ fixtures/
 .tox/
 __pycache__/
 *.pyc
-migrations/
 *.sqlite3
 
